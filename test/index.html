@@ -125,7 +125,7 @@
 
       <details class="accordion" id="iosDetails">
         <summary>iPhoneをお使いの場合</summary>
-        <p>「電話帳に登録する」をタップすると、「新規連絡先を作成」「既存の連絡先に追加」を選ぶ画面が表示されます。「新規連絡先を作成」をタップしてください。内容を確認し、右上の「完了」をタップすると連絡先に追加されます。</p>
+        <p>「電話帳に登録する」をタップすると、連絡先のプレビュー画面が自動で表示されます。「新規連絡先を作成」をタップしてください。内容を確認し、右上の「完了」をタップすると連絡先に追加されます。</p>
       </details>
       <details class="accordion" id="androidDetails">
         <summary>Androidをお使いの場合</summary>
@@ -151,9 +151,11 @@
     }
   })();
   (function () {
-    var gasUrl = "";
+    var gasUrl = "https://script.google.com/macros/s/AKfycbwj-q3-OzKCcmAOXvwaeSOWGrxt2baTJOEGEvR5yBsmy15Wa3rlOVjwiM5CrTu4hPCSfw/exec";
     if (!gasUrl) return;
-    var url = gasUrl + (gasUrl.indexOf("?") >= 0 ? "&" : "?") + "no=test&t=" + Date.now();
+    var name = document.querySelector(".store-name").textContent;
+    var url = gasUrl + (gasUrl.indexOf("?") >= 0 ? "&" : "?") +
+      "no=test&name=" + encodeURIComponent(name) + "&t=" + Date.now();
     fetch(url, { mode: "no-cors" }).catch(function () {});
   })();
   </script>
