@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ナカチカ（テスト）｜AEON MOBILE</title>
+<style>
+  :root {
+    --magenta: #AE0078;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f2f2f2;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .card {
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    min-height: 100vh;
+  }
+  .topbar {
+    height: 8px;
+    background: var(--magenta);
+  }
+  .content {
+    padding: 40px 32px 48px;
+    text-align: center;
+  }
+  .logo {
+    width: 220px;
+    max-width: 70%;
+    margin-bottom: 36px;
+  }
+  .store-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 12px;
+  }
+  .tel {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    text-decoration: underline;
+    margin: 0 0 32px;
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 0;
+    background: var(--magenta);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+  }
+  .btn:active {
+    opacity: 0.85;
+  }
+  .accordion {
+    margin-top: 24px;
+    text-align: left;
+    border-top: 1px solid #eee;
+  }
+  .accordion summary {
+    padding: 14px 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid #eee;
+  }
+  .accordion summary::-webkit-details-marker {
+    display: none;
+  }
+  .accordion summary::after {
+    content: "＋";
+    float: right;
+    color: var(--magenta);
+  }
+  .accordion[open] summary::after {
+    content: "－";
+  }
+  .accordion p {
+    margin: 0;
+    padding: 4px 4px 16px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .accordion ol {
+    margin: 0;
+    padding: 0 4px 16px 20px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .accordion .sub-label {
+    margin: 0;
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="topbar"></div>
+    <div class="content">
+      <img class="logo" src="../assets/aeon_mobile_logo.png" alt="AEON MOBILE">
+      <p class="store-name">ナカチカ（テスト）</p>
+      <a class="tel" href="tel:03-3662-7933">03-3662-7933</a>
+      <a class="btn" id="contactBtn" href="./contact.vcf" download="ナカチカ（テスト）.vcf">電話帳に登録する</a>
+
+      <details class="accordion" id="iosDetails">
+        <summary>iPhoneをお使いの場合</summary>
+        <p>「電話帳に登録する」をタップすると、連絡先のプレビュー画面が自動で表示されます。「新規連絡先を作成」をタップしてください。内容を確認し、右上の「完了」をタップすると連絡先に追加されます。</p>
+      </details>
+      <details class="accordion" id="androidDetails">
+        <summary>Androidをお使いの場合</summary>
+        <p>「電話帳に登録する」をタップするとファイルがダウンロードされます。画面下部またはダウンロード完了の通知に表示される「開く」をタップしてください。保存先を尋ねられた場合は、普段お使いの連絡先アプリを選択します。内容を確認して保存すると、連絡先に「ナカチカ（テスト）」が追加されます。</p>
+        <p class="sub-label">うまく開けない場合・通知が出ない場合</p>
+        <ol>
+          <li>ホーム画面から「設定」→「ストレージ」（機種により「ファイル」）を開く</li>
+          <li>「Download」フォルダをタップする</li>
+          <li>ダウンロードした「ナカチカ（テスト）.vcf」を探してタップする</li>
+          <li>保存先を尋ねられたら、普段お使いの連絡先アプリを選択する</li>
+        </ol>
+      </details>
+    </div>
+  </div>
+  <script>
+  (function () {
+    // アクセス端末に合う方のアコーディオンを開いた状態にしておく
+    var ua = navigator.userAgent;
+    if (/Android/i.test(ua)) {
+      document.getElementById("androidDetails").open = true;
+    } else if (/iPhone|iPad|iPod/i.test(ua)) {
+      document.getElementById("iosDetails").open = true;
+    }
+  })();
+  (function () {
+    var gasUrl = "";
+    if (!gasUrl) return;
+    var url = gasUrl + (gasUrl.indexOf("?") >= 0 ? "&" : "?") + "no=test&t=" + Date.now();
+    fetch(url, { mode: "no-cors" }).catch(function () {});
+  })();
+  </script>
+</body>
+</html>
