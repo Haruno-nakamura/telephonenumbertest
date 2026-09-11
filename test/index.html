@@ -66,6 +66,12 @@
   .btn:active {
     opacity: 0.85;
   }
+  .hint {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #666;
+  }
 </style>
 </head>
 <body>
@@ -76,26 +82,15 @@
       <p class="store-name">ナカチカ（テスト）</p>
       <a class="tel" href="tel:03-3662-7933">03-3662-7933</a>
       <a class="btn" id="contactBtn" href="./contact.vcf">電話帳に登録する</a>
+      <p class="hint" id="androidHint" hidden>ダウンロード完了の通知をタップすると<br>連絡先に追加できます</p>
     </div>
   </div>
   <script>
   (function () {
-    // Androidは.vcfダウンロード経由だと「連絡先に追加」まで手数が多いため、
-    // Android Chromeではintentリンクで直接「連絡先の新規作成」を開く。
-    // intentが使えない場合はS.browser_fallback_urlで.vcfにフォールバック。
+    // Androidはダウンロード後に通知をタップして開く2ステップになる（iOSは自動でプレビューが開く）。
+    // これは名刺サービス各社も同じ挙動で、Android側の標準的な仕様。
     if (/Android/i.test(navigator.userAgent)) {
-      var name = "ナカチカ（テスト）";
-      var phone = "03-3662-7933";
-      var basePath = location.href.slice(0, location.href.lastIndexOf("/") + 1);
-      var fallback = encodeURIComponent(basePath + "contact.vcf");
-      var intentUrl =
-        "intent://#Intent;action=android.intent.action.INSERT;" +
-        "type=vnd.android.cursor.dir/contact;" +
-        "S.name=" + encodeURIComponent(name) + ";" +
-        "S.phone=" + encodeURIComponent(phone) + ";" +
-        "S.browser_fallback_url=" + fallback + ";" +
-        "end";
-      document.getElementById("contactBtn").setAttribute("href", intentUrl);
+      document.getElementById("androidHint").hidden = false;
     }
   })();
   (function () {
