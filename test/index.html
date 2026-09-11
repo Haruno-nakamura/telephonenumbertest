@@ -98,6 +98,20 @@
     line-height: 1.8;
     color: #555;
   }
+  .accordion ol {
+    margin: 0;
+    padding: 0 4px 16px 20px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .accordion .sub-label {
+    margin: 0;
+    padding: 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
+  }
 </style>
 </head>
 <body>
@@ -107,15 +121,22 @@
       <img class="logo" src="../assets/aeon_mobile_logo.png" alt="AEON MOBILE">
       <p class="store-name">ナカチカ（テスト）</p>
       <a class="tel" href="tel:03-3662-7933">03-3662-7933</a>
-      <a class="btn" id="contactBtn" href="./contact.vcf">電話帳に登録する</a>
+      <a class="btn" id="contactBtn" href="./contact.vcf" download="ナカチカ（テスト）.vcf">電話帳に登録する</a>
 
       <details class="accordion" id="iosDetails">
         <summary>iPhoneをお使いの場合</summary>
-        <p>「電話帳に登録する」をタップすると、連絡先の新規作成画面が自動で表示されます。内容を確認して「保存」をタップしてください。</p>
+        <p>「電話帳に登録する」をタップすると、「新規連絡先を作成」「既存の連絡先に追加」を選ぶ画面が表示されます。「新規連絡先を作成」をタップしてください。内容を確認し、右上の「完了」をタップすると連絡先に追加されます。</p>
       </details>
       <details class="accordion" id="androidDetails">
         <summary>Androidをお使いの場合</summary>
-        <p>「電話帳に登録する」をタップするとファイルがダウンロードされます。画面上部またはダウンロード完了の通知をタップして開くと、連絡先アプリの登録画面が表示されるので「保存」をタップしてください。</p>
+        <p>「電話帳に登録する」をタップするとファイルがダウンロードされます。画面下部またはダウンロード完了の通知に表示される「開く」をタップしてください。保存先を尋ねられた場合は、普段お使いの連絡先アプリを選択します。内容を確認して保存すると、連絡先に「ナカチカ（テスト）」が追加されます。</p>
+        <p class="sub-label">うまく開けない場合・通知が出ない場合</p>
+        <ol>
+          <li>ホーム画面から「設定」→「ストレージ」（機種により「ファイル」）を開く</li>
+          <li>「Download」フォルダをタップする</li>
+          <li>ダウンロードした「ナカチカ（テスト）.vcf」を探してタップする</li>
+          <li>保存先を尋ねられたら、普段お使いの連絡先アプリを選択する</li>
+        </ol>
       </details>
     </div>
   </div>
