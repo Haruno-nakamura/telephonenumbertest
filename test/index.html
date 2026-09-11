@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ナカチカ（テスト）｜AEON MOBILE</title>
+<style>
+  :root {
+    --magenta: #AE0078;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f2f2f2;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .card {
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    min-height: 100vh;
+  }
+  .topbar {
+    height: 8px;
+    background: var(--magenta);
+  }
+  .content {
+    padding: 40px 32px 48px;
+    text-align: center;
+  }
+  .logo {
+    width: 220px;
+    max-width: 70%;
+    margin-bottom: 36px;
+  }
+  .store-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 12px;
+  }
+  .tel {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    text-decoration: underline;
+    margin: 0 0 32px;
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 0;
+    background: var(--magenta);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+  }
+  .btn:active {
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="topbar"></div>
+    <div class="content">
+      <img class="logo" src="../assets/aeon_mobile_logo.png" alt="AEON MOBILE">
+      <p class="store-name">ナカチカ（テスト）</p>
+      <a class="tel" href="tel:03-3662-7933">03-3662-7933</a>
+      <a class="btn" href="./contact.vcf">電話帳に登録する</a>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var gasUrl = "";
+    if (!gasUrl) return;
+    var url = gasUrl + (gasUrl.indexOf("?") >= 0 ? "&" : "?") + "no=test&t=" + Date.now();
+    fetch(url, { mode: "no-cors" }).catch(function () {});
+  })();
+  </script>
+</body>
+</html>
