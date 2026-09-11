@@ -89,8 +89,8 @@
       var basePath = location.href.slice(0, location.href.lastIndexOf("/") + 1);
       var fallback = encodeURIComponent(basePath + "contact.vcf");
       var intentUrl =
-        "intent:#Intent;action=android.intent.action.INSERT;" +
-        "type=vnd.android.cursor.dir%2Fcontact;" +
+        "intent://#Intent;action=android.intent.action.INSERT;" +
+        "type=vnd.android.cursor.dir/contact;" +
         "S.name=" + encodeURIComponent(name) + ";" +
         "S.phone=" + encodeURIComponent(phone) + ";" +
         "S.browser_fallback_url=" + fallback + ";" +
